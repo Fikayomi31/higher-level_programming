@@ -1,2 +1,2 @@
--- Create database hbtn_0c_0 if it exit the script should not fail
+-- Create database hbtn_0c_0 if it exit or not
 CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
