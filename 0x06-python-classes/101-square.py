@@ -58,7 +58,7 @@ class Square:
         """print stdout the square #"""
         my_square = ""
         if self.__size == 0:
-            return
+            my_square = "\n"
         else:
             for i in range(self.__position[1]):
                 my_square = "\n" #print empty line
