@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
 """Defining a class"""
-
+import dis
 
 class Square:
 
@@ -19,3 +18,5 @@ class Square:
     def area(self):
         """method to get the area of square"""
         return self.__size * self.__size
+
+dis.dis(Square)

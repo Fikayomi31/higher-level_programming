@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import dis
 """Defining  the class"""
 
 
@@ -63,3 +63,6 @@ class Square:
                 print() #print empty line
             for i in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
+
+
+dis.dis(Square)
