@@ -15,13 +15,13 @@ if __name__ == "__main__":
                          database=database, port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT cities.id, state.name FROM cities\
-                NATURAL JOIN state\
-                WHERE cities.states_id = states.id\
-                ORDER BY cities,id ASC")
-    query_rows = cur.fetchll()
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities\
+                INNER JOIN states\
+                WHERE cities.state_id = states.id\
+                ORDER BY cities.id ASC")
+    query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
 
     cur.close()
-    dn.close()
+    db.close()

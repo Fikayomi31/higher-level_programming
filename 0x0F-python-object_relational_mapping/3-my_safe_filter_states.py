@@ -16,8 +16,9 @@ if __name__ == "__main__":
                          database=database, port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT name FROM states WHERE name LIKE BINARY '{name}s'\
-            ORDER BY states.id ASC", {'name': state})
+    cur.execute("SELECT states.id, states.name FROM states\
+                 WHERE name LIKE BINARY %(name)s\
+                 ORDER BY states.id ASC", {'name': state})
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
